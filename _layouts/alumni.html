@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include metas.html %}
+    <title>{{page.title}}</title>
+    {% include general.html %}
+  </head>
+  <body id="alumni-page">
+
+    <header>
+      <nav>
+        <ul class="align-middle">
+          {% for link in page.links %}
+            <li><a class="page-scroll" href="{{link[1]}}">{{link[0]}}</a></li>
+          {% endfor %}
+        </ul>
+
+        <button class="hamburger hamburger--slider">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </nav>
+    </header>
+
+    <div id="alumni">
+      <h1 class="sectionheader">Our Alumni</h1>
+      <p class="description">Though these beautiful people are no longer with us on stage, they're forever in our hearts. They've gone off to bigger and better things, but they'll always be an Orange Appeal to us.</p>
+      <div class="guys">
+        {% assign alumni = site.guys | where:'is_alumn', true %}
+        {% for guy in alumni %}
+        <li class="material-shadow">
+          <h1>{{guy.name}}</h1>
+          <img class="profile-pic" src="/img/profiles/{{guy.img}}" alt="{{guy.alt}}">
+          <main>
+            <p class="classOf">Class of {{guy.class_of}}</p>
+          </main>
+        </li>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <script src="{{'/js/scripts.js' | relative_url}}" charset="utf-8"></script>
+  </body>
+</html>

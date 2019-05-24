@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	{% include metas.html %}
+
+	{% include general.html %}
+
+</head>
+<body>
+
+	<header>
+		<nav>
+			<ul class="align-middle">
+				{% for link in page.links %}
+					<li><a class="page-scroll" href="{{link[1]}}">{{link[0]}}</a></li>
+				{% endfor %}
+			</ul>
+
+			<button class="hamburger hamburger--slider">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</nav>
+		<div class="headercontainer">
+			<h1 class="brand"><img class="leaf" src="{{'/graphics/leaf.svg' | relative_url }}"><span class="boldred">ORANGE</span><span class="thinwhite">APPEAL</span></h1>
+			<h2 class="tagline">The original all-male a cappella group at Syracuse University</h2>
+		</div>
+
+		<a class="page-scroll contactbutton" href="#contact">
+			<button id="scrolldown">
+				Contact Us!
+			</button>
+		</a>
+	</header>
+
+	<main class="content">
+		<section id="albumsection">
+			<h1 class="sectionheader">Albums</h1>
+			<ul class="albums">
+				<li class="material-shadow">
+					<a target="_blank" href="https://open.spotify.com/album/6lh45GlQIn8fhEUkyS6ekp">
+						<img class="img-fluid" src="{{'/img/unpeeled.jpeg' | relative_url }}">
+						<main>
+							<p>Unpeeled is our newest album, released in Fall 2017.</p>
+						</main>
+					</a>
+				</li>
+				<li class="material-shadow">
+					<a target="_blank" href="https://open.spotify.com/album/7emZZp0vGb4zUOCD9IawOY">
+            <img class="img-fluid" src="{{'/img/chucks_and_ties.jpeg' | relative_url }}">
+  					<main>
+  						<p>Chucks & Ties was our first album, released in 2014.</p>
+  					</main>
+          </a>
+				</li>
+
+			</ul>
+		</section>
+		<section id="meet">
+
+			<h1 class="sectionheader">Meet the Guys</h1>
+			<ul class="guys">
+        {% for guy in site.guys %}
+          <li class="material-shadow">
+            <h1>{{guy.name}}</h1>
+            <img class="profile-pic" src="img/profiles/{{guy.img}}" alt="{{guy.alt}}">
+            <main>
+              <p class="part">{{guy.part}}</p>
+              <p class="bio">{{guy.content}}</p>
+            </main>
+          </li>
+        {% endfor %}
+			</ul>
+		</section>
+
+		<section id="social">
+			<h1 class="sectionheader">Social Media</h1>
+			<div class="twittercontainer">
+				<a class="twitter-timeline" href="https://twitter.com/orangeappeal44">Tweets by orangeappeal44</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</section>
+
+		<section id="contact">
+			<div class="sectionheader">
+				<h1>Contact us!</h1>
+				<p>Want to book OA for an event or LADS tour? Just want to chat ;)? We can be reached by email at <a href="mailto:orangeappeal44@gmail.com">orangeappeal44@gmail.com</a>.</p>
+				<p>Or, if you'd prefer, you can use this handy dandy form here to reach out!</p>
+			</div>
+
+			<form class="form" action="https://docs.google.com/forms/d/e/1FAIpQLSeoBjVWU5H3umTryh7TYj30LhxSibJTTJknDXNf58awkoU20Q/formResponse">
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<label for="entry.428528901">Name</label>
+						<input type="text" name="entry.428528901" class="validate" required>
+					</div>
+					<div class="input-field col s12 m6">
+
+						<input type="email" name="emailAddress" class="validate" required>
+						<label for="emailAddress">email</label>
+					</div>
+				</div>
+				<div class="input-field">
+					<label for="message">What can we do for you?</label>
+					<textarea id="message" name="entry.595014669" class="materialize-textarea" required></textarea>
+				</div>
+				<div class="input-field">
+					<input class="btn-large" type="submit" value="submit">
+				</div>
+			</form>
+		</section>
+	</main>
+
+	{% include footer.html %}
+
+	<script type="text/javascript" src="{{'js/scripts.js' | relative_url }}"></script>
+</body>
+</html>
