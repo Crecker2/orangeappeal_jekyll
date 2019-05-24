@@ -32,7 +32,7 @@
         {% for guy in alumni %}
         <li class="material-shadow">
           <h1>{{guy.name}}</h1>
-          <img class="profile-pic" src="/img/profiles/{{guy.img}}" alt="{{guy.alt}}">
+          <img class="profile-pic" src="{{'/img/profiles/' | relative_url}}{{guy.img}}" alt="{{guy.alt}}">
           <main>
             <p class="classOf">Class of {{guy.class_of}}</p>
           </main>
