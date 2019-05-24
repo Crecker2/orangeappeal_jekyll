@@ -12,7 +12,7 @@
       <nav>
         <ul class="align-middle">
           {% for link in page.links %}
-            <li><a class="page-scroll" href="{{link[1]}}">{{link[0]}}</a></li>
+            <li><a class="page-scroll" href="{{link[1] | relative_url}}">{{link[0]}}</a></li>
           {% endfor %}
         </ul>
 
