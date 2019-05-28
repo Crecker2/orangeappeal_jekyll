@@ -1,1 +1,1 @@
-Sitemap: https://joshuafayer.com//orangeappeal_jekyll/sitemap.xml
+Sitemap: orangeappeal.net/orangeappeal_jekyll/sitemap.xml

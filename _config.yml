@@ -1,7 +1,7 @@
 site: "Orange Appeal: Syracuse University's Original All-Male A Cappella Group"
 baseurl: "orangeappeal_jekyll"
-url: https://joshuafayer.com/
-permalink: /:title/
+url: orangeappeal.net
+permalink: ""
 collections:
   - posts
   - guys
