@@ -61,8 +61,9 @@
 		<section id="meet">
 
 			<h1 class="sectionheader">Meet the Guys</h1>
+			{% assign guys = site.guys | where:'is_alumn', false %}
 			<ul class="guys">
-        {% for guy in site.guys %}
+        {% for guy in guys %}
           <li class="material-shadow">
             <h1>{{guy.name}}</h1>
             <img class="profile-pic" src="img/profiles/{{guy.img}}" alt="{{guy.alt}}">

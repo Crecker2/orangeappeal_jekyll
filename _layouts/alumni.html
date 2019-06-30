@@ -29,7 +29,8 @@
       <p class="description">Though these beautiful people are no longer with us on stage, they're forever in our hearts. They've gone off to bigger and better things, but they'll always be an Orange Appeal to us.</p>
       <div class="guys">
         {% assign alumni = site.guys | where:'is_alumn', true %}
-        {% for guy in alumni %}
+        {% assign sorted = alumni | sort: 'class_of' | reverse %}
+        {% for guy in sorted %}
         <li class="material-shadow">
           <h1>{{guy.name}}</h1>
           <img class="profile-pic" src="{{'/img/profiles/' | relative_url}}{{guy.img}}" alt="{{guy.alt}}">
