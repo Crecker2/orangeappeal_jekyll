@@ -9,19 +9,7 @@
   <body id="alumni-page">
 
     <header>
-      <nav>
-        <ul class="align-middle">
-          {% for link in page.links %}
-            <li><a class="page-scroll" href="{{link[1] | relative_url}}">{{link[0]}}</a></li>
-          {% endfor %}
-        </ul>
-
-        <button class="hamburger hamburger--slider">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-      </nav>
+      {% include nav.html %}
     </header>
 
     <div id="alumni">

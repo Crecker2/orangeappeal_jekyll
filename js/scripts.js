@@ -30,26 +30,3 @@ $('nav .hamburger').click(togglenav);
 
 sr.reveal('.albums li:nth-of-type(odd)',{origin: 'left', distance: '300px', scale: 1, duration: 1000});
 sr.reveal('.albums li:nth-of-type(even)',{origin: 'right', distance: '300px', scale: 1, duration: 1000});
-
-
-// meet the guys section
-
-var source = document.getElementById('entry-template').innerHTML;
-var template = Handlebars.compile(source);
-
-$.getJSON({
-	url: 'guydata.json'
-}).done(function(data){
-	guydata = data;
-	console.log(guydata);
-	makeprofiles();
-});
-
-function makeprofiles(){
-	$(guydata).each(function(){
-		var context = {name: this.name, bio: this.bio, picture: this.picture, part: this.part};
-		var html = template(context);
-		$('.guys').append(html);
-	});
-
-}
